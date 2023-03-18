@@ -2,6 +2,10 @@ require('dotenv').config();
 const express = require('express');
 
 const app = express();
+<<<<<<< HEAD
+=======
+const routes = require('./routes')
+>>>>>>> 15e4b144574ff3a9f274b7cfc01edfa80b7e20e6
 const cors = require('cors');
 
 const mongoose = require('mongoose');
@@ -12,6 +16,7 @@ const Login = require('./Models/LoginReact');
 
 mongoose.set('strictQuery', true);
 
+<<<<<<< HEAD
 const connectionString = process.env.DB;
 mongoose.connect(connectionString)
   .then(() => {
@@ -119,3 +124,22 @@ app.on('pronto', () => {
     console.log('Servidor iniciado http://localhost:3001/');
   });
 });
+=======
+//const connectionString = process.env.DB;
+//mongoose.connect(connectionString)
+//  .then(() => {
+//    app.emit('pronto');
+//  });
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(routes);
+app.use(cors());
+
+
+//app.on('pronto', () => {
+  app.listen(3001, () => {
+    console.log('Servidor iniciado http://localhost:3001/');
+  });
+//});
+>>>>>>> 15e4b144574ff3a9f274b7cfc01edfa80b7e20e6
