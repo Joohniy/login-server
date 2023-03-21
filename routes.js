@@ -8,7 +8,7 @@ const userController = require('./controllers/userController');
 
 route.post('/register', registerController.register);
 
-route.post('login', loginController.login);
+route.post('/login', loginController.login);
 
 route.get('/especial', especialControllers.especial);
 route.post('/especial/edit', especialControllers.edit);
