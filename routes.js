@@ -12,7 +12,7 @@ route.post('/login', loginController.login);
 
 route.get('/especial', especialControllers.especial);
 route.post('/especial/edit', especialControllers.edit);
-route.post('/especial/edit', especialControllers.delete);
+route.post('/especial/delete', especialControllers.delete);
 
 route.get('/users/id', userController.localizeUserId);
 

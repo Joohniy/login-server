@@ -19,16 +19,17 @@ class Login {
 
   async findUser() {
     this.user = await LoginReact.findOne({ email: this.body.email });
-
+    
     if (!this.user) {
       this.errors.push('Usuário não existe');
-    }
-
+    };
+    
     const auth = bcryptjs.compareSync(this.body.senha, this.user.senha);
 
     if (auth === false) {
       return this.errors.push('Senha inválida');
-    }
+    };
+    
     return this.user;
   }
 

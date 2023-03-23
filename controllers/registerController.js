@@ -6,9 +6,8 @@ exports.register = async (req, res) => {
 
     await users.register();
 
-    if (users.errors.length > 0) {
-        res.send(users.errors);
-    }
+    const errors = users.errors;
+    console.log(errors);
 
     const cadastrados = await users.searchId();
     res.json({

@@ -6,17 +6,12 @@ exports.localizeUserId = async (req, res) => {
 
     jwt.verify(headerToken, process.env.SECRET, (err, decoded) => {
       if(err) {
-        console.log('Algo deu errado')
+        res.status(401).send('Token inválido');
       } else {
         return decoded;
       }
-      
     });
-  
+
     const users = new Login(req.body);
-    const cadId = await users.searchId();
-    res.json({
-  
-    });
-  
+    const cadId = await users.searchId();  
 };
