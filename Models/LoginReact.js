@@ -3,9 +3,10 @@ const bcryptjs = require('bcryptjs');
 const { genSaltSync } = require('bcrypt');
 
 const LoginReactSchema = new mongoose.Schema({
-  name: { type: String, required: false },
+  nome: { type: String, required: false },
   email: { type: String, required: false },
   senha: { type: String, required: false },
+  isAdmin: { type: String, required: false },
 });
 
 const LoginReact = mongoose.model('LoginReact', LoginReactSchema);
